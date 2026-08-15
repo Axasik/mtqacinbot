@@ -7,9 +7,13 @@ CHANNEL_ID = os.getenv("CHANNEL_ID")
 ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 bot = telebot.TeleBot(BOT_TOKEN)
-
 @bot.message_handler(commands=["start"])
 def start(message):
+    bot.send_message(
+        message.chat.id,
+        f"Քո Telegram ID-ն է՝ {message.from_user.id}\n\n"
+        "Պահիր այս թիվը, այն պետք է գրենք Railway-ի ADMIN_ID-ում։"
+    )
     bot.send_message(
         message.chat.id,
         "Բարև ❤️\n\n"
