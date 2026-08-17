@@ -4,7 +4,7 @@ from telebot import types
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
-ADMIN_ID = int(os.getenv("ADMIN_ID"))
+ADMIN_ID = 0
 
 bot = telebot.TeleBot(BOT_TOKEN)
 @bot.message_handler(commands=["start"])
