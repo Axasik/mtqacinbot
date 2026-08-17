@@ -42,7 +42,7 @@ def receive_message(message):
 
     bot.send_message(
         ADMIN_ID,
-        "💭 Նոր անանուն միտք․\n\n"
+        "Նոր անանուն միտք․\n\n"
         f"«{text}»",
         reply_markup=keyboard
     )
