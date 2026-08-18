@@ -28,6 +28,9 @@ def receive_message(message):
     if not text:
         return
 
+    # Օգտատիրոջ անունը
+    user_name = message.from_user.first_name or "Անուն չկա"
+
     keyboard = types.InlineKeyboardMarkup()
     publish_button = types.InlineKeyboardButton(
         "✅ Հրապարակել",
@@ -43,7 +46,8 @@ def receive_message(message):
     bot.send_message(
         ADMIN_ID,
         "Նոր անանուն միտք․\n\n"
-        f"«{text}»",
+        f"«{text}»\n\n"
+        f"👤 Ուղարկողի անունը՝ {user_name}",
         reply_markup=keyboard
     )
 
